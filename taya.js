@@ -65,7 +65,7 @@ async function askQuestion(query) {
                 const spinner = ora({ text: `[NTExhaust-INFO] Executing Swap ${i + 1}/${loopCount}...`, color: 'cyan' }).start();
 
                 const randomToken = TOKENS[Math.floor(Math.random() * TOKENS.length)];
-                const randomAmount = (Math.random() * (0.08 - 0.01) + 0.01).toFixed(4);
+                const randomAmount = (Math.random() * (0.008 - 0.001) + 0.001).toFixed(4);
                 const amountIn = ethers.parseEther(randomAmount);
                 const path = [WMON, randomToken];
                 const deadline = Math.floor(Date.now() / 1000) + 300;

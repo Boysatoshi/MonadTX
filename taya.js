@@ -11,7 +11,7 @@ const SWAP_CONTRACT = "0x4ba4bE2FB69E2aa059A551Ce5d609Ef5818Dd72F";
 const WMON = "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701";
 const TOKENS = [
     "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea", // USDC
-    "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701", // WMON
+    "0xE0590015A873bF326bd645c3E1266d4db41C4E6B", // CHOG
     "0x0F0BDEbF0F83cD1EE3974779Bcb7315f9808c714", // DAK
     "0xfe140e1dCe99Be9F4F15d657CD9b7BF622270C50"  // YAKI
 ];
@@ -65,7 +65,7 @@ async function askQuestion(query) {
                 const spinner = ora({ text: `[NTExhaust-INFO] Executing Swap ${i + 1}/${loopCount}...`, color: 'cyan' }).start();
 
                 const randomToken = TOKENS[Math.floor(Math.random() * TOKENS.length)];
-                const randomAmount = (Math.random() * (0.008 - 0.001) + 0.001).toFixed(4);
+                const randomAmount = (Math.random() * (0.05 - 0.01) + 0.01).toFixed(4);
                 const amountIn = ethers.parseEther(randomAmount);
                 const path = [WMON, randomToken];
                 const deadline = Math.floor(Date.now() / 1000) + 300;
